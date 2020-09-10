@@ -42,7 +42,7 @@ console.log(createMenuItem("Reuben", 12, "Lunch"));
 console.log(createMenuItem("Bacon and Eggs", 16, "Breakfast"));
 console.log(createMenuItem("Pancakes", 10.5, "Breakfast"));
 
-/* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
+/* ✅Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
 Your method should accept: 
 
@@ -56,12 +56,12 @@ const burger = {
   name: "Burger",
   price: 18,
   category: "Lunch",
-  discount: function (input) {
-    if (input === "teacher" || "student") {
-      let newSchoolPrice = `$(this.price) - $(this.price * 0.25)`;
+  discount: function (str) {
+    if (str === "teacher" || str === "student") {
+      let newSchoolPrice = this.price - this.price * 0.25;
       return newSchoolPrice;
-    } else if (input === "public") {
-      let newPublicPrice = `$(this.price) - $(this.price * 0.1)`;
+    } else if (str === "public") {
+      let newPublicPrice = this.price - this.price * 0.1;
       return newPublicPrice;
     } else {
       return "Invalid Input";
